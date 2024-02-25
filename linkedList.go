@@ -356,7 +356,7 @@ func (l *List[T]) Backward() iter.Seq2[int, T] {
 }
 
 func swap[T any](n1, n2 *Node[T]) {
-    n1.data, n2.data = n2.data, n1.data
+    n1.prev, n1.next, n2.prev, n2.next = n2.prev, n2.next, n1.prev, n1.next
 }
 
 func partition[T any](n1, n2 *Node[T], cmp func(a, b T) int) *Node[T] {
